@@ -1,0 +1,46 @@
+{
+  "manifest_version": 2,
+  "name": "Google Maps → Lantmäteriet",
+  "version": "1.7.6",
+  "description": "Öppna vald Google Maps-punkt i Lantmäteriets Min Karta.",
+  "permissions": [
+    "tabs",
+    "storage",
+    "https://www.google.se/*",
+    "https://www.google.com/*",
+    "https://maps.google.com/*",
+    "https://minkarta.lantmateriet.se/*"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.google.se/maps/*",
+        "https://www.google.com/maps/*",
+        "https://maps.google.com/*"
+      ],
+      "js": [
+        "google-maps.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://minkarta.lantmateriet.se/*"
+      ],
+      "js": [
+        "min-karta.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "google-maps-lantmateriet@local"
+    }
+  }
+}
