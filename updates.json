@@ -1,7 +1,18 @@
 {
   "addons": {
     "google-maps-lantmateriet@local": {
-      "updates": []
+      "updates": [
+        {
+          "version": "1.7.7",
+          "update_link": "https://github.com/jhnsv/google-maps-lantmateriet/releases/download/v1.7.7/google-maps-lantmateriet-1.7.7.xpi",
+          "update_hash": "sha256:5d81ce0f9db09a461eea570f32171f2a8bcec5694b40c1f1d239383033bd202b",
+          "applications": {
+            "gecko": {
+              "strict_min_version": "140.0"
+            }
+          }
+        }
+      ]
     }
   }
 }
