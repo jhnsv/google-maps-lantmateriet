@@ -1,14 +1,12 @@
-# Ändringslogg
+# Ändringshistorik
+
+## 1.7.7 – distributionskandidat
+- Förberett Firefox egen distribution med `update_url` till GitHub-hostad `updates.json`.
+- Lagt till datadeklaration för `locationInfo`.
+- Tagit bort den separata `tabs`-behörigheten; tillägget använder endast `tabs.create()` för att öppna Min Karta.
+- Oförändrad funktionskod från den manuellt testade 1.7.6.
+- Lagt till MIT-licens.
 
 ## 1.7.6
-- Lade till stöd för vanliga kartnålar utan adressrad.
-- Behöll stöd för företagskort och adresser.
-- Placering för vanliga kartnålar sker före raden "Your Maps history".
-
-## 1.7.5
-- Förbättrade placeringen efter Googles adressrad.
-- Höll tilläggets rad utanför Googles adressknapp.
-
-## 1.7.1–1.7.4
-- UI-justeringar och felsökning av placering i Google Maps.
-- Dessa versioner ersattes av den stabilare 1.7.5 och därefter 1.7.6.
+- Lade till stöd för vanliga kartnålar utöver företags-/adresskort.
+- Behöll fungerande placering i företags-/adresskort.

@@ -1,11 +1,8 @@
 # Google Maps till Min Karta
 
-Ett Firefox-tillägg som låter dig öppna en vald punkt i Google Maps direkt i
-Lantmäteriets Min Karta. Tillägget hämtar koordinaterna från Google Maps,
-räknar om dem till SWEREF 99 TM och startar en sökning i Min Karta.
+Ett Firefox-tillägg som låter dig öppna en vald punkt i Google Maps direkt i Lantmäteriets Min Karta. Tillägget hämtar koordinaterna från Google Maps, räknar om dem till SWEREF 99 TM och startar en sökning i Min Karta.
 
-> **Status:** fungerande utvecklingsversion 1.7.6. Projektet är ännu inte
-> granskat eller publicerat på Firefox Add-ons (AMO).
+> **Version:** 1.7.7 – kandidat för egen distribution. Inte ännu signerad av Mozilla.
 
 ## Funktioner
 
@@ -22,8 +19,7 @@ räknar om dem till SWEREF 99 TM och startar en sökning i Min Karta.
 4. Välj `extension/manifest.json`.
 5. Öppna eller ladda om Google Maps.
 
-Tillfälligt inlästa tillägg tas normalt bort när Firefox startas om. Detta är
-utvecklarinstallation, inte den slutliga användarinstallationen.
+Tillfälligt inlästa tillägg tas normalt bort när Firefox startas om. Detta är utvecklarinstallation, inte den slutliga användarinstallationen.
 
 ## Projektstruktur
 
@@ -34,39 +30,32 @@ extension/
   google-maps.js
   min-karta.js
   README.txt
+updates.json
+LICENSE
+PRIVACY.md
+CHANGELOG.md
 ```
+
+## Egen distribution och uppdateringar
+
+Tillägget är förberett för egen distribution via Mozilla-signerade XPI-filer. Uppdateringsadressen är `https://raw.githubusercontent.com/jhnsv/google-maps-lantmateriet/main/updates.json`. Den filen måste uppdateras med den signerade XPI-filens HTTPS-adress och SHA-256-hash efter varje Mozilla-signering. Lägg den signerade XPI-filen i en GitHub Release med ett versionsnummer som matchar manifestet.
+
+**Viktigt:** Den här källkodsversionen är inte i sig en signerad installationsfil. Firefox kräver en Mozilla-signerad XPI för normal distribution.
 
 ## Integritet
 
-Tillägget använder koordinater från den aktuella Google Maps-sidan när
-användaren själv klickar på länken. Koordinaterna räknas om lokalt och skickas
-till Lantmäteriets Min Karta för att utföra sökningen.
-
-Projektet har ingen egen analys, annonsering eller telemetri. Se
-[PRIVACY.md](PRIVACY.md) för mer information.
+När användaren själv klickar på **Öppna i Lantmäteriet** läser tillägget koordinater från den aktuella Google Maps-sidan. Koordinaterna räknas om lokalt och skickas till Lantmäteriets Min Karta för sökningen. Tillägget har ingen egen analys, annonsering eller telemetri. Se [PRIVACY.md](PRIVACY.md).
 
 ## Kända begränsningar
 
-- Google Maps och Min Karta är webbappar vars interna HTML och gränssnitt kan
-  ändras. Sådana ändringar kan göra att tilläggets placering eller automatiska
-  sökning behöver uppdateras.
-- Projektet är oberoende och inte anslutet till, godkänt av eller sponsrat av
-  Google eller Lantmäteriet.
-- Version 1.7.6 är testad manuellt i den utvecklingsmiljö som användes under
-  utvecklingen. Den är inte ännu godkänd av Mozilla.
+- Google Maps och Min Karta är webbappar vars interna HTML och gränssnitt kan ändras. Sådana ändringar kan göra att tilläggets placering eller automatiska sökning behöver uppdateras.
+- Projektet är oberoende och inte anslutet till, godkänt av eller sponsrat av Google eller Lantmäteriet.
+- Version 1.7.7 är en testkandidat och ännu inte signerad av Mozilla.
 
 ## Rapportera problem
 
-Skapa ett GitHub Issue och beskriv:
-- Firefox-version och operativsystem.
-- Om det gäller en vanlig kartnål, adress eller företagskort.
-- Vad du förväntade dig och vad som hände.
-- Skärmbild eller relevant HTML om möjligt.
-
-Dela inte känslig platsinformation i publika issues.
+Skapa ett GitHub Issue och beskriv Firefox-version, operativsystem, vilken typ av plats du testade och vad som hände. Dela inte känslig platsinformation i publika issues.
 
 ## Licens
 
-Ingen öppen källkodslicens har ännu valts. Tills en licens läggs till gäller
-upphovsrättens standardregler; publicering av källkoden innebär inte i sig att
-andra får återanvända eller distribuera den.
+Projektet distribueras under MIT License. Se [LICENSE](LICENSE).
